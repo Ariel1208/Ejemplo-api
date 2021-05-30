@@ -10,11 +10,12 @@ const app = express();
 app.use(bodyParser.json());
 
 var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'api'
+    host: 'us-cdbr-east-04.cleardb.com',
+    user: 'b9d56c03a4a64a',
+    password: "d065901f",
+    database: 'heroku_75dca23ebd2db75'
 });
+
 
 connection.connect(error => {
     if (error) throw error;

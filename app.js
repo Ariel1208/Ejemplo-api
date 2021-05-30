@@ -67,7 +67,7 @@ app.post('/add', (req, res) => {
         if (error) throw error;
         res.send('Costumer created');
     })
-})
+});
 
 app.put('/update/:id', (req, res) => {
     const { id } = req.params;

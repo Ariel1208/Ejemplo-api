@@ -38,7 +38,7 @@ app.get('/costumers', (req, res) => {
         } else {
             res.send('Not resutl');
         }
-    })
+    });
 })
 
 app.get('/costumers/:id', (req, res) => {

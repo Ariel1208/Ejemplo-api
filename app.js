@@ -17,7 +17,7 @@ var connection = mysql.createPool({
 });
 
 
-connection.connect(error => {
+connection.getConnection()(error => {
     if (error) throw error;
     console.log('Base de datos conectada');
 })

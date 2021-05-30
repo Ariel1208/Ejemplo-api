@@ -17,7 +17,7 @@ var connection = mysql.createPool({
 });
 
 
-connection.getConnection()(error => {
+connection.getConnection(error => {
     if (error) throw error;
     console.log('Base de datos conectada');
 })
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to my Api');
 })
 
-
+/*
 app.get('/costumers', (req, res) => {
     const sql = 'SELECT* FROM usuario';
     connection.query(sql, (error, results) => {
@@ -93,4 +93,4 @@ app.delete('/delete/:id', (req, res) => {
         res.send('Costumer updated')
     });
 
-});
+});*/

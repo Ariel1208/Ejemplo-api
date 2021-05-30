@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/costumers', (req, res) => {
-    const sql = 'SELECT* FROM costumer';
+    const sql = 'SELECT* FROM usuario';
     connection.query(sql, (error, results) => {
         if (error) throw error;
         if (results.length > 0) {

@@ -9,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b9d56c03a4a64a',
     password: "d065901f",

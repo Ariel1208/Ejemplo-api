@@ -39,7 +39,6 @@ app.get('/costumers', (req, res) => {
             res.send('Not resutl');
         }
     });
-    connection.end();
 })
 
 app.get('/costumers/:id', (req, res) => {
@@ -53,7 +52,6 @@ app.get('/costumers/:id', (req, res) => {
             res.send('Not resutl');
         }
     });
-    connection.end();
 
 })
 
@@ -70,7 +68,6 @@ app.post('/add', (req, res) => {
         res.send('Costumer created');
     })
 
-    connection.end();
 });
 
 app.put('/update/:id', (req, res) => {
@@ -84,7 +81,6 @@ app.put('/update/:id', (req, res) => {
         res.send('Costumer updated')
     });
 
-    connection.end();
 
 })
 
@@ -96,7 +92,5 @@ app.delete('/delete/:id', (req, res) => {
         if (error) throw error;
         res.send('Costumer updated')
     });
-
-    connection.end();
 
 });

@@ -88,5 +88,5 @@ app.delete('/delete/:id', (req, res) => {
     connection.query(sql, (error, results) => {
         if (error) throw error;
         res.send('Costumer updated')
-    })
+    });
 });

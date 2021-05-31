@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3050;
 
 const app = express();
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -15,7 +16,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(bodyParser.json());
+
 
 var connection = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',

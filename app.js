@@ -66,7 +66,7 @@ app.get('/Usuarios', (req, res) => {
             if(results.length>0){
                 res.send(results[0]);
             }else{
-                res.send(results);
+                res.send();
             }
     
         })

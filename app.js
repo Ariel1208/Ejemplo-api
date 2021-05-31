@@ -58,9 +58,9 @@ app.get('/Usuarios', (req, res) => {
             if (error) throw error;
 
             if(results.length>0){
-                res.send(results);
+                res.send(results[0]);
             }else{
-                res.send('Usuario no existente');
+                res.send(results);
             }
     
         })

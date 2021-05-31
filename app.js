@@ -48,6 +48,27 @@ app.get('/Usuarios', (req, res) => {
         });
     });
 
+    app.get('/validacionLogin', (req, res) => {
+
+        const customerObj = {
+            email: req.body.email,
+            pass: req.body.pass
+        }
+
+        console.log(customerObj);
+
+    /*    const sql = `SELECT* FROM lista_servicio_cocina WHERE  `;
+
+
+        connection.query(sql, (error, results) => {
+            if (error) throw error;
+            if (results.length > 0) {
+                res.json(results);
+            } else {
+                res.send('Not resutl');
+            }
+        });*/
+    });
 
     /*
     app.get('/costumers/:id', (req, res) => {

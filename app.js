@@ -46,7 +46,9 @@ app.get('/Usuarios', (req, res) => {
                 res.send('Not resutl');
             }
         });
-    })
+    });
+
+
     /*
     app.get('/costumers/:id', (req, res) => {
         const { id } = req.params;

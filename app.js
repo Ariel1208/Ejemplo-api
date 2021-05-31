@@ -2,20 +2,26 @@ const express = require('express');
 const mysql = require('mysql');
 
 const bodyParser = require('body-parser');
+var cors = require('cors');
 
 const PORT = process.env.PORT || 3050;
 
-const app = express();s
+const app = express();
 
-app.use((req, res, next) => {
+
+/*app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-	Method');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
-});
+});*/
 
-app.use(bodyParser.json());
+
+app.use(
+    cors(),
+    bodyParser.json()
+    );
 
 var connection = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',

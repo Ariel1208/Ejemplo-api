@@ -55,7 +55,8 @@ app.get('/Usuarios', (req, res) => {
             pass: req.body.pass
         }
 
-        console.log(customerObj);
+        console.log();
+        res.send('Validacion de usuarios')
 
     /*    const sql = `SELECT* FROM lista_servicio_cocina WHERE  `;
 

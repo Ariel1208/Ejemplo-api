@@ -13,8 +13,9 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, 	DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
-    bodyParser.json();
 });
+
+app.use(bodyParser.json());
 
 var connection = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',
@@ -48,27 +49,22 @@ app.get('/Usuarios', (req, res) => {
         });
     });
 
-    app.get('/validacionLogin', (req, res) => {
+    app.post('/validacionUsuario', (req, res) => {
+        const { email, pass } = req.body;
+    
+        const sql = `SELECT * FROM lista_servicio_cocina WHERE correo = '${email}' and contrasena = '${pass}'`;
 
-        const customerObj = {
-            email: req.body.email,
-            pass: req.body.pass
-        }
-
-        console.log();
-        res.send('Validacion de usuarios')
-
-    /*    const sql = `SELECT* FROM lista_servicio_cocina WHERE  `;
-
-
-        connection.query(sql, (error, results) => {
+        connection.query(sql, (error,results) => {
             if (error) throw error;
-            if (results.length > 0) {
-                res.json(results);
-            } else {
-                res.send('Not resutl');
+
+            if(results.length>0){
+                res.send(results);
+            }else{
+                res.send('Usuario no existente');
             }
-        });*/
+    
+        })
+
     });
 
     /*

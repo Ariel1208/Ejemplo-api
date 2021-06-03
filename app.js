@@ -68,9 +68,21 @@ app.get('/Usuarios', (req, res) => {
             }else{
                 res.send({});
             }
-    
+    ª
         })
 
+    });
+
+    app.get('/platillosSemanales', (req, res) => {
+        const sql = 'CALL PROC_PLATILLOS_SEMANALES';
+        connection.query(sql, (error, results) => {
+            if (error) throw error;
+            if (results.length > 0) {
+                res.json(results);
+            } else {
+                res.send('Not resutl');
+            }
+        });
     });
 
     /*

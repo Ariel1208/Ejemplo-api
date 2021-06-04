@@ -73,6 +73,19 @@ app.get('/Usuarios', (req, res) => {
         });
     });
 
+    app.get('/pagosUsuario/:id', (req, res) => {
+        const { id } = req.params;
+        const sql = `SELECT* FROM historial_pagos_cocina WHERE id_usuario = ${id} ORDER BY historial_pagos_cocina.fecha_pago DESC`;
+        connection.query(sql, (error, results) => {
+            if (error) throw error;
+            if (results.length > 0) {
+                res.json(results);
+            } else {
+                res.send('Not resutl');
+            }
+        });
+    });
+
     /*
     app.get('/costumers/:id', (req, res) => {
         const { id } = req.params;

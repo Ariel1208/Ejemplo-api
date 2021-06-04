@@ -40,7 +40,7 @@ app.listen(PORT, () => console.log("Servidor corriendi en: " + PORT));
 
 app.get('/', (req, res) => {
     res.send('Welcome to my Api');
-})
+});
 
 
 app.get('/Usuarios', (req, res) => {

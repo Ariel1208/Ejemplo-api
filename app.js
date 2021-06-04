@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3050;
 
 
 app.use((req, res, next) => {
@@ -24,6 +25,7 @@ connection.getConnection(error => {
     console.log('Base de datos conectada');
 });
 
+app.listen(PORT, () => console.log("Servidor corriendi en: " + PORT));
 
 app.get('/', (req, res) => {
     res.send('Welcome to my Api');

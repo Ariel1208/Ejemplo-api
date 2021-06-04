@@ -54,7 +54,6 @@ app.get('/Usuarios', (req, res) => {
             if (error) throw error;
 
             if(results.length>0){
-                res.header('Access-Control-Allow-Origin', '*');
                 res.send(results[0]);
             }else{
                 res.send({});

@@ -34,7 +34,7 @@ var connection = mysql.createPool({
 connection.getConnection(error => {
     if (error) throw error;
     console.log('Base de datos conectada');
-})
+});
 
 app.listen(PORT, () => console.log("Servidor corriendi en: " + PORT));
 

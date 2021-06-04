@@ -10,8 +10,7 @@ app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
 	res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
 	next();
-     bodyParser.json()
-});
+}, bodyParser.json());
 const PORT = process.env.PORT || 3050;
 var connection = mysql.createPool({
     host: 'us-cdbr-east-04.cleardb.com',

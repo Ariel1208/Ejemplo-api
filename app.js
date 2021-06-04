@@ -57,7 +57,6 @@ app.get('/Usuarios', (req, res) => {
             }else{
                 res.send({});
             }
-    ª
         })
 
     });

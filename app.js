@@ -88,7 +88,7 @@ app.get('/Usuarios', (req, res) => {
 
     app.get('/adeudosUsuario/:id', (req, res) => {
         const { id } = req.params;
-        const sql = `SELECT COUNT(*) as dias , sum(monto) as montos, fecha_servicio,fecha_pago FROM adeudo_pagos a INNER JOIN lista_servicio_cocina b ON a.id_usuario = b.id_usuario WHERE a.id_usuario = ${id}`;
+        const sql = `SELECT COUNT(*) as dias , sum(monto) as montos, Date_format(fecha_servicio,'%Y/%M/%d') AS fecha_pago ,fecha_pago as fecha_pagado FROM adeudo_pagos a INNER JOIN lista_servicio_cocina b ON a.id_usuario = b.id_usuario WHERE a.id_usuario = ${id}`;
         connection.query(sql, (error, results) => {
             if (error) throw error;
             if (results.length > 0) {

@@ -86,6 +86,18 @@ app.get('/Usuarios', (req, res) => {
         });
     });
 
+    app.get('/adeudosUsuario/:id', (req, res) => {
+        const { id } = req.params;
+        const sql = `SELECT* FROM adeudo_pagos a INNER JOIN lista_servicio_cocina b ON a.id_usuario = b.id_usuario  WHERE a.id_usuario = ${id} ORDER BY a.id_adeudo ASC`;
+        connection.query(sql, (error, results) => {
+            if (error) throw error;
+            if (results.length > 0) {
+                res.json(results);
+            } else {
+                res.send('Sin adeudos');
+            }
+        });
+    });
     /*
     app.get('/costumers/:id', (req, res) => {
         const { id } = req.params;
